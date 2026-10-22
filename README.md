@@ -13,6 +13,7 @@ TeddyPups U.A.E. is Dubai’s boutique showroom for teacup, miniature, and teddy
 ## 🚀 Live Demo & Repository
 
 - **Live Reference**: [https://puppy.instabizweb.com/](https://puppy.instabizweb.com/)
+- **GitHub Repository**: [https://github.com/Yaduraj21/insta_biz_web_task](https://github.com/Yaduraj21/insta_biz_web_task)
 - **Tech Stack**: Next.js 16 + React 19 + TypeScript + Tailwind CSS v4 + Zod
 - **Typography**: `Fraunces` (Headings/Plush), `Figtree` (UI/Body), `Shantell Sans` (Scrawl/Accents)
 - **Primary Color Palette**: Milk (`#fffdf8`), Cocoa (`#2a170e`), Honey (`#fbe3b4`), Honey-Deep (`#f2be6b`), Toffee (`#a24a1a`)
@@ -24,11 +25,12 @@ TeddyPups U.A.E. is Dubai’s boutique showroom for teacup, miniature, and teddy
 For full technical rationale and trade-offs, please see [DECISIONS.md](./DECISIONS.md) and [PLAN.md](./PLAN.md).
 
 1. **Native Dialog Mobile Menu (`D-003`)**: Implemented using HTML5 `<dialog>` element with `showModal()` and `close()` for native focus trapping, keyboard `Escape` closing, and backdrop blurring.
-2. **Zero Heavy UI Libraries**: Small, bespoke custom components for image carousels, photo lightboxes, and accordions to achieve fast load speeds and zero layout shift.
-3. **Typed Data Layer**: No hard-coded JSX strings. All puppy records, tickets, customer stories, and FAQ Q&As live in strongly typed TypeScript modules in `/src/data/`.
-4. **Honeypot + In-Memory Rate Limiting (`D-007` & `D-008`)**: The `/api/enquiry` route is protected with server-side Zod validation, a hidden honeypot field, and IP rate limiting (5 requests per 10 minutes).
-5. **Static Site Generation (SSG)**: 58 routes prerendered at build time via `generateStaticParams()` across all 15 available puppies and 30 gone-home alumni puppies.
-6. **Dynamic SEO & Rich Schemas**: Complete with Open Graph, Twitter Cards, canonical tags, `og:locale: en_AE`, dynamic `sitemap.xml`, `robots.txt`, and Schema.org `PetStore` & `FAQPage` JSON-LD scripts.
+2. **Zero Heavy UI Libraries**: Bespoke custom components for image carousels, photo lightboxes, scroll reveals, and accordions to achieve fast load speeds and zero layout shift.
+3. **Interactive Delight & Animations**: Interactive custom paw-cursor trails (`PawCursor.tsx`), intersection observer scroll triggers (`useScrollAnimation.ts`), seamless infinite breed marquees, and CSS-based micro-interactions.
+4. **Typed Data Layer**: No hard-coded JSX strings. All puppy records, tickets, customer stories, and FAQ Q&As live in strongly typed TypeScript modules in `/src/data/`.
+5. **Honeypot + In-Memory Rate Limiting (`D-007` & `D-008`)**: The `/api/enquiry` route is protected with server-side Zod validation, a hidden honeypot field, and IP rate limiting (5 requests per 10 minutes).
+6. **Static Site Generation (SSG)**: 58 routes prerendered at build time via `generateStaticParams()` across all 15 available puppies and 30 gone-home alumni puppies.
+7. **Dynamic SEO & Rich Schemas**: Complete with Open Graph, Twitter Cards, canonical tags, `og:locale: en_AE`, dynamic `sitemap.xml`, `robots.txt`, and Schema.org `PetStore` & `FAQPage` JSON-LD scripts.
 
 ---
 
@@ -78,6 +80,8 @@ teddypups-clone/
 │   │       ├── PuppyCard.tsx          # Card with video badge, origin pill, and quick specs
 │   │       ├── GoneHomeCard.tsx       # Perforated ticket card with destination stamps
 │   │       ├── Accordion.tsx          # Accessible accordion with ARIA expansion
+│   │       ├── AnimatedSection.tsx    # Scroll reveal wrapper with configurable transitions
+│   │       ├── PawCursor.tsx          # Playful interactive paw print cursor trails
 │   │       ├── PawIcon.tsx            # SVG paw, star, and sparkle icons
 │   │       └── ScallopHem.tsx         # Scalloped hem SVG wave divider
 │   ├── data/
@@ -87,10 +91,11 @@ teddypups-clone/
 │   │   └── families.ts                # Customer photos and testimonials
 │   ├── lib/
 │   │   ├── whatsapp.ts                # WhatsApp URL generator with prefilled messages
-│   │   └── rateLimit.ts               # In-memory IP rate limiter
+│   │   ├── rateLimit.ts               # In-memory IP rate limiter
+│   │   └── useScrollAnimation.ts      # IntersectionObserver hook for scroll reveals
 │   └── types/
 │       └── index.ts                   # Shared TypeScript definitions
-├── public/                            # Static assets
+├── public/                            # Static assets & category images
 ├── PLAN.md                            # Comprehensive architecture plan
 ├── PROMPTS.md                         # Chronological prompt log
 ├── DECISIONS.md                       # Technical decision records (D-001 to D-011)
@@ -109,8 +114,8 @@ teddypups-clone/
 ### 2. Installation
 ```bash
 # Clone the repository
-git clone <repo-url>
-cd teddypups-clone
+git clone https://github.com/Yaduraj21/insta_biz_web_task.git
+cd insta_biz_web_task
 
 # Install dependencies
 npm install
