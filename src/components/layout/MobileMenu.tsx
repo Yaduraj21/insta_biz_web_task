@@ -21,24 +21,17 @@ const navLinks = [
 ];
 
 export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
-  const dialogRef = useRef<HTMLDialogElement>(null);
   const pathname = usePathname();
 
   useEffect(() => {
-    const dialog = dialogRef.current;
-    if (!dialog) return;
-
     if (isOpen) {
-      if (!dialog.open) {
-        dialog.showModal();
-        document.body.style.overflow = 'hidden';
-      }
+      document.body.style.overflow = 'hidden';
     } else {
-      if (dialog.open) {
-        dialog.close();
-        document.body.style.overflow = '';
-      }
+      document.body.style.overflow = '';
     }
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, [isOpen]);
 
   // Close on route change
@@ -46,18 +39,25 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     onClose();
   }, [pathname, onClose]);
 
-  // Handle native cancel (Escape key)
-  const handleCancel = (e: React.SyntheticEvent) => {
-    e.preventDefault();
-    onClose();
-  };
+  // Handle Escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (isOpen && e.key === 'Escape') {
+        onClose();
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, onClose]);
+
+  if (!isOpen) return null;
 
   return (
-    <dialog
-      ref={dialogRef}
-      onCancel={handleCancel}
+    <div
+      role="dialog"
+      aria-modal="true"
       aria-label="Site menu"
-      className="m-0 p-0 max-w-none max-h-none w-screen h-dvh bg-honey text-cocoa backdrop:bg-cocoa/40 z-[100] fixed inset-0 overflow-y-auto"
+      className="m-0 p-0 max-w-none max-h-none w-screen h-dvh bg-honey text-cocoa z-50 fixed inset-0 overflow-y-auto animate-fadeIn"
     >
       <div className="min-h-full flex flex-col justify-between p-6 sm:p-10">
         {/* Top bar with title and close button */}
@@ -117,6 +117,6 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           </div>
         </div>
       </div>
-    </dialog>
+    </div>
   );
 }

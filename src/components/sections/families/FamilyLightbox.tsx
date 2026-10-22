@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { FamilyPhoto } from '@/types';
 import { StarIcon } from '@/components/ui/PawIcon';
@@ -11,7 +11,6 @@ interface FamilyLightboxProps {
 
 export function FamilyLightbox({ photos }: FamilyLightboxProps) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-  const dialogRef = useRef<HTMLDialogElement>(null);
 
   const selectedPhoto = selectedIndex !== null ? photos[selectedIndex] : null;
 
@@ -32,20 +31,14 @@ export function FamilyLightbox({ photos }: FamilyLightboxProps) {
   };
 
   useEffect(() => {
-    const dialog = dialogRef.current;
-    if (!dialog) return;
-
     if (selectedIndex !== null) {
-      if (!dialog.open) {
-        dialog.showModal();
-        document.body.style.overflow = 'hidden';
-      }
+      document.body.style.overflow = 'hidden';
     } else {
-      if (dialog.open) {
-        dialog.close();
-        document.body.style.overflow = '';
-      }
+      document.body.style.overflow = '';
     }
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, [selectedIndex]);
 
   useEffect(() => {
@@ -101,15 +94,20 @@ export function FamilyLightbox({ photos }: FamilyLightboxProps) {
         ))}
       </div>
 
-      {/* Lightbox Dialog */}
-      <dialog
-        ref={dialogRef}
-        onCancel={closeDialog}
-        aria-label="Family photo story"
-        className="m-auto p-0 rounded-3xl bg-white border-2 border-cocoa/20 max-w-2xl w-[90vw] shadow-2xl backdrop:bg-cocoa/60 backdrop:backdrop-blur-sm z-[110]"
-      >
-        {selectedPhoto && (
-          <div className="p-6 sm:p-8 flex flex-col gap-5 relative">
+      {/* Lightbox Modal */}
+      {selectedPhoto && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Family photo story"
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-cocoa/60 backdrop-blur-sm animate-fadeIn"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              closeDialog();
+            }
+          }}
+        >
+          <div className="relative bg-white border-2 border-cocoa/20 max-w-2xl w-[90vw] sm:w-full rounded-3xl shadow-2xl p-6 sm:p-8 flex flex-col gap-5 max-h-[92vh] overflow-y-auto">
             {/* Close Button */}
             <button
               type="button"
@@ -168,8 +166,8 @@ export function FamilyLightbox({ photos }: FamilyLightboxProps) {
               )}
             </div>
           </div>
-        )}
-      </dialog>
+        </div>
+      )}
     </>
   );
 }

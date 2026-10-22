@@ -35,11 +35,6 @@ export function PawCursor() {
     // Only show custom cursor on desktop
     const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
     if (isTouch) return;
-    47
-
-
-
-
 
     document.addEventListener('mousemove', handleMouseMove);
     document.addEventListener('mouseleave', handleMouseLeave);
@@ -78,7 +73,7 @@ export function PawCursor() {
           width: 24,
           height: 24,
           pointerEvents: 'none',
-          zIndex: 9999,
+          zIndex: 999999,
           opacity: isVisible ? 1 : 0,
           transform: isPointer ? 'scale(1.4) rotate(-15deg)' : 'scale(1)',
           transition: 'transform 0.15s ease-out, opacity 0.15s ease-out',
@@ -105,7 +100,7 @@ export function PawCursor() {
             width: 20,
             height: 20,
             pointerEvents: 'none',
-            zIndex: 9998,
+            zIndex: 999998,
             animation: 'pawTrailFade 0.6s ease-out forwards',
           }}
         >
