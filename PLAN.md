@@ -122,3 +122,20 @@ Tailwind classes used on live site:
 8. ✅ Phase 6: API route (forms + validation + rate limit + honeypot) (DONE)
 9. ✅ Phase 7: Polish (animations, a11y, performance) (DONE)
 10. ✅ Phase 8: Production build verification (58/58 static pages generated) (DONE)
+11. ✅ Phase 9: Typography, Font Variables & Animation Timing Fixes (DONE)
+12. ✅ Phase 10: Carousel & Card Layering Refinement (unobstructed breed view) (DONE)
+13. ✅ Phase 11: Zero-Git GitHub REST API Push Implementation (DONE)
+14. ✅ Phase 12: Top-Layer Modal Architecture & Cursor Stacking Resolution (DONE)
+
+---
+
+## Post-Launch Architectural Decisions
+
+### D-012: Modal Stacking vs. Browser Top-Layer Isolation
+- **Context**: The browser's native `<dialog>` element with `showModal()` promotes the element and its `::backdrop` into the internal browser **Top Layer**. The Top Layer strictly sits above all standard DOM nodes regardless of `z-index`. Because of this, the interactive custom paw cursor (`PawCursor`) was visually submerged underneath the modal backdrop when viewing family photo stories.
+- **Decision**: Refactored `FamilyLightbox.tsx` and `MobileMenu.tsx` from `<dialog>` to standard accessible fixed modal overlays (`role="dialog"`, `aria-modal="true"`, `z-50`). Maintained keyboard `Escape` closing, arrow key navigation, backdrop click-to-close, and `body.style.overflow = 'hidden'`.
+- **Result**: `PawCursor` with `zIndex: 999999` remains completely visible and interactive on top of both backdrops and modal content across all viewport sizes.
+
+### D-013: Zero-Git Deployment via GitHub REST API
+- **Context**: In containerized or minimalist deployment environments where the Git CLI is not installed or available, code must still be pushed to remote repositories using personal access tokens.
+- **Decision**: Created `github_push.js` utilizing GitHub's Git Data API (`/git/blobs`, `/git/trees`, `/git/commits`, `/git/refs`). The script handles binary files (images, SVGs) via Base64 encoding, batches uploads, constructs Git trees, and fast-forwards branch heads cleanly.
