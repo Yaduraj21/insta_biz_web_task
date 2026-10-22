@@ -97,9 +97,20 @@ Tailwind classes used on live site:
 - **FAQ**: `FAQPage` schema with all 9 Q&A pairs
 - **Email**: `teddypupsadmin@gmail.com`
 
----
+## 🏗️ System Design & Architecture
 
-## Architecture
+![TeddyPups U.A.E. Clone: System Design](./public/system-design.png)
+
+The architectural blueprint above illustrates the end-to-end data and execution pipeline:
+- **Development Pipeline**: Antigravity (AI agent) → GitHub Repository → Vercel CI/CD Build & Deployment → Live Showcase & Loom Walkthrough
+- **Edge Layer (Vercel Edge)**: Global SSL termination, edge caching, static asset distribution, and automatic image optimization (`next/image`) for responsive breakpoints (390px, 768px, 1440px)
+- **Next.js Core Application (App Router + TypeScript + Tailwind CSS)**:
+  - **Universal Standards**: Rich Schema.org metadata (JSON-LD `PetStore` & `FAQPage`), mobile-first tokens, WCAG compliance, and `next/font` zero-CLS font delivery
+  - **Route Hierarchy**: `/`, `/puppies` (with URL query filters), `/puppies/[slug]` (SSG), `/gone-home`, `/happy-families`, `/how-it-works`, `/faq`, `/contact`
+  - **Component Structure**: Composable design system across Layout (`Header`, `Footer`, `MobileMenu`), Sections (`HeroSection`, `MeetThePupsSection`, etc.), and UI primitives (`PawCursor`, `Accordion`, `ScallopHem`)
+  - **Typed Data Layer**: In-memory models in `/data/` (`puppies.ts`, `gone-home.ts`, `families.ts`, `faq.ts`)
+  - **Server API Route (`/api/enquiry`)**: Zod schema validation, honeypot spam traps, in-memory IP rate limiting, and Resend email dispatch
+- **External Services**: WhatsApp deep-link concierge (`wa.me`), Google Maps showroom navigation, and social platforms
 
 ### Tech Stack
 - **Next.js 16** (App Router) + **TypeScript** (strict)

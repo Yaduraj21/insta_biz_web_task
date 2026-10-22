@@ -20,11 +20,13 @@ TeddyPups U.A.E. is Dubai’s boutique showroom for teacup, miniature, and teddy
 
 ---
 
-## 📐 Architecture & Key Design Decisions
+## 📐 Architecture & System Design
+
+![TeddyPups U.A.E. Clone: System Design](./public/system-design.png)
 
 For full technical rationale and trade-offs, please see [DECISIONS.md](./DECISIONS.md) and [PLAN.md](./PLAN.md).
 
-1. **Native Dialog Mobile Menu (`D-003`)**: Implemented using HTML5 `<dialog>` element with `showModal()` and `close()` for native focus trapping, keyboard `Escape` closing, and backdrop blurring.
+1. **Accessible Overlay Modals (`D-012`)**: Custom fixed overlays (`role="dialog"`, `aria-modal="true"`) for mobile navigation and photo lightboxes, avoiding browser Top Layer isolation so interactive cursor trails remain seamless.
 2. **Zero Heavy UI Libraries**: Bespoke custom components for image carousels, photo lightboxes, scroll reveals, and accordions to achieve fast load speeds and zero layout shift.
 3. **Interactive Delight & Animations**: Interactive custom paw-cursor trails (`PawCursor.tsx`), intersection observer scroll triggers (`useScrollAnimation.ts`), seamless infinite breed marquees, and CSS-based micro-interactions.
 4. **Typed Data Layer**: No hard-coded JSX strings. All puppy records, tickets, customer stories, and FAQ Q&As live in strongly typed TypeScript modules in `/src/data/`.

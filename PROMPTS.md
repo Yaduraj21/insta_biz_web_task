@@ -105,3 +105,15 @@ This file records prompts given to the agent in order, as required for the Loom 
 - Synchronized `PROMPTS.md` with complete history of user prompts, root-cause analyses, and implemented solutions.
 - Updated `PLAN.md` with post-launch architectural refinements, modal top-layer stacking resolution, and zero-git GitHub API deployment strategy.
 - Pushed updated documentation to GitHub `main` branch.
+
+---
+
+## Prompt 10 — System Design Diagram Integration & Push
+
+> "if this image is appropriate, can we add it to the plan.md and if yes then please add it"
+
+### Key actions delivered:
+- Evaluated system design diagram: accurately maps developer pipeline, Vercel edge caching, Next.js App Router core, typed data layer, API enquiry route with spam protection, and external WhatsApp/social/Resend integrations.
+- Persisted high-resolution asset to `/public/system-design.png`.
+- Embedded diagram and comprehensive architecture overview into `PLAN.md` and `README.md`.
+- Pushed commit to GitHub `main` branch.
