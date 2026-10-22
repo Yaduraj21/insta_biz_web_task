@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme {
+  --color-milk: #fffdf8;
+  --color-cocoa: #2a170e;
+  --color-cocoa-soft: #5a3520;
+  --color-honey: #fbe3b4;
+  --color-honey-deep: #f2be6b;
+  --color-toffee: #a24a1a;
+  --color-toffee-ink: #6b2a1c;
+  --color-amber: #e4a352;
+  --color-blush: #f9b9a6;
+  --color-tongue: #e98c8c;
+
+  --font-plush: var(--font-fraunces), serif;
+  --font-plush-text: var(--font-fraunces), serif;
+  --font-scrawl: var(--font-shantell), cursive;
+  --font-sans: var(--font-figtree), system-ui, sans-serif;
+}
+
+:root {
+  --header-h: 4.75rem;
+  --gutter: clamp(1rem, 4vw, 3.5rem);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fffdf8;
+  color: #2a170e;
+  font-family: var(--font-figtree), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom utilities */
+.gutter {
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.text-giant {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1.05;
+}
+
+.text-lede {
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  line-height: 1.6;
+}
+
+/* Scallop border utilities */
+.scallop-border {
+  background-image: radial-gradient(circle at 10px 0, transparent 0, transparent 10px, #fffdf8 11px);
+  background-size: 20px 20px;
+  background-repeat: repeat-x;
+}
+
+/* Ticket dashed border */
+.ticket-edge {
+  background-image: radial-gradient(circle at 0 50%, transparent 12px, #fffdf8 13px);
+}
+
+/* Mobile dialog backdrop */
+dialog::backdrop {
+  background: rgba(42, 23, 14, 0.4);
+  backdrop-filter: blur(4px);
+}
+
+/* Selection style */
+::selection {
+  background-color: #fbe3b4;
+  color: #2a170e;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fffdf8;
+}
+::-webkit-scrollbar-thumb {
+  background: #f2be6b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #a24a1a;
+}
