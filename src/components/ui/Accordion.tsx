@@ -23,7 +23,7 @@ export function AccordionItem({ id, question, answer, defaultOpen = false }: Acc
         onClick={() => setIsOpen(!isOpen)}
         className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 cursor-pointer focus-visible:outline-2 focus-visible:outline-toffee"
       >
-        <span className="font-plush font-bold text-lg sm:text-xl text-cocoa leading-snug flex items-center gap-3">
+        <span className="font-sans font-bold text-base sm:text-lg text-cocoa leading-snug flex items-center gap-3 tracking-normal">
           <PawIcon className={`w-4 h-4 text-toffee shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-12 scale-110' : ''}`} />
           <span>{question}</span>
         </span>

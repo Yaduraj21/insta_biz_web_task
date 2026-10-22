@@ -87,7 +87,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 key={link.href}
                 href={link.href}
                 onClick={onClose}
-                className={`font-plush text-[clamp(2.2rem,8.5vw,3.2rem)] font-extrabold leading-tight tracking-tight transition-all duration-200 flex items-center justify-between group ${
+                className={`font-plush text-[clamp(2.2rem,8.5vw,3.2rem)] font-extrabold leading-tight tracking-normal transition-all duration-200 flex items-center justify-between group ${
                   isActive ? 'text-toffee translate-x-2' : 'text-cocoa hover:text-toffee hover:translate-x-2'
                 }`}
               >

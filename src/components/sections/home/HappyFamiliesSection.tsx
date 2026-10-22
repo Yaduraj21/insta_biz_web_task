@@ -18,10 +18,10 @@ export function HappyFamiliesSection() {
                 64 moments &amp; counting
               </span>
             </div>
-            <h2 className="font-plush font-extrabold text-3xl sm:text-5xl text-cocoa tracking-tight">
+            <h2 className="font-plush font-extrabold text-3xl sm:text-5xl text-cocoa tracking-normal">
               Happy Families Across Dubai &amp; GCC
             </h2>
-            <p className="mt-2 text-cocoa/75 text-sm sm:text-base max-w-xl">
+            <p className="mt-2 text-cocoa/75 text-sm sm:text-base max-w-xl font-medium">
               From Downtown Dubai penthouses to Emirates Hills villas, see real moments with our teddy puppies in their forever homes.
             </p>
           </div>
@@ -42,7 +42,7 @@ export function HappyFamiliesSection() {
               <StarIcon key={i} className="w-5 h-5" />
             ))}
           </div>
-          <p className="font-plush text-lg sm:text-2xl text-cocoa font-medium italic leading-relaxed">
+          <p className="font-sans text-lg sm:text-2xl text-cocoa font-medium italic leading-relaxed max-w-3xl mx-auto tracking-normal">
             &ldquo;TeddyPups made finding our little Milo the most wonderful, stress-free experience. He came healthy, joyful, and completely settled in on day one.&rdquo;
           </p>
           <div className="mt-4 flex items-center justify-center gap-2 text-sm font-bold text-toffee">
@@ -70,7 +70,7 @@ export function HappyFamiliesSection() {
                   className="object-cover object-center"
                 />
               </div>
-              <h3 className="font-plush font-bold text-base text-cocoa">
+              <h3 className="font-plush font-bold text-base text-cocoa tracking-normal">
                 {fam.puppyName} &amp; {fam.ownerName}
               </h3>
               <p className="text-xs text-toffee font-medium mt-0.5">

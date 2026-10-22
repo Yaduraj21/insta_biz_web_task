@@ -56,7 +56,7 @@ export function PuppyGallery({ images, video, puppyName }: PuppyGalleryProps) {
         ) : (
           <div className="relative w-full h-full">
             <Image
-              src={images[currentIndex] || 'https://puppy.instabizweb.com/media/maltipoo-1.jpg'}
+              src={images[currentIndex] || '/images/puppies/max-1.jpg'}
               alt={`${puppyName} photo ${currentIndex + 1}`}
               fill
               priority

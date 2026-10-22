@@ -34,7 +34,7 @@ export function JourneySection() {
                   the journey home
                 </span>
               </div>
-              <h2 className="font-plush font-extrabold text-3xl sm:text-5xl text-cocoa tracking-tight">
+              <h2 className="font-plush font-extrabold text-3xl sm:text-5xl text-cocoa tracking-normal">
                 Simple, Joyful &amp; Fully Supported
               </h2>
             </div>

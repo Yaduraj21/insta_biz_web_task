@@ -14,10 +14,10 @@ export function TwoWaysSection() {
               seamless &amp; stress-free
             </span>
           </div>
-          <h2 className="font-plush font-extrabold text-3xl sm:text-5xl text-cocoa tracking-tight">
+          <h2 className="font-plush font-extrabold text-3xl sm:text-5xl text-cocoa tracking-normal">
             Two Ways to Bring Your Puppy Home
           </h2>
-          <p className="mt-3 text-cocoa/75 text-sm sm:text-base">
+          <p className="mt-3 text-cocoa/75 text-sm sm:text-base font-medium">
             Whether you fall in love in our Downtown Dubai showroom today or request a custom rare breed from abroad, we handle everything with care.
           </p>
         </div>
@@ -30,7 +30,7 @@ export function TwoWaysSection() {
               <span className="inline-block bg-honey text-toffee-ink text-xs font-extrabold py-1 px-3 rounded-full uppercase tracking-wider mb-4 border border-cocoa/15">
                 Immediate Adoption
               </span>
-              <h3 className="font-plush font-extrabold text-2xl sm:text-3xl text-cocoa">
+              <h3 className="font-plush font-bold text-2xl sm:text-3xl text-cocoa tracking-normal">
                 1. Meet in Downtown Dubai
               </h3>
               <p className="mt-3 text-cocoa/80 text-sm sm:text-base leading-relaxed">
@@ -68,7 +68,7 @@ export function TwoWaysSection() {
               <span className="inline-block bg-cocoa text-honey text-xs font-extrabold py-1 px-3 rounded-full uppercase tracking-wider mb-4 border border-honey/30">
                 Order Upon Request
               </span>
-              <h3 className="font-plush font-extrabold text-2xl sm:text-3xl text-cocoa">
+              <h3 className="font-plush font-bold text-2xl sm:text-3xl text-cocoa tracking-normal">
                 2. Bespoke Rare Import
               </h3>
               <p className="mt-3 text-cocoa/80 text-sm sm:text-base leading-relaxed">

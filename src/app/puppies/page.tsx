@@ -31,7 +31,7 @@ export default function PuppiesPage() {
                 from Teddy&apos;s sketchbook
               </span>
             </div>
-            <h1 className="font-plush font-extrabold text-4xl sm:text-6xl text-cocoa tracking-tight leading-tight">
+            <h1 className="font-plush font-extrabold text-4xl sm:text-6xl text-cocoa tracking-normal leading-tight">
               Available Puppies
             </h1>
             <p className="mt-3 text-cocoa/80 text-base sm:text-lg leading-relaxed">
@@ -65,7 +65,7 @@ export default function PuppiesPage() {
                   forever settled
                 </span>
               </div>
-              <h2 className="font-plush font-extrabold text-3xl sm:text-4xl text-cocoa tracking-tight">
+              <h2 className="font-plush font-extrabold text-3xl sm:text-4xl text-cocoa tracking-normal">
                 Recently Gone Home
               </h2>
               <p className="mt-1 text-sm text-cocoa/75">

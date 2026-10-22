@@ -24,7 +24,7 @@ export function GoneHomeCard({ puppy }: GoneHomeCardProps) {
       {/* Puppy Image */}
       <div className="relative aspect-square w-full bg-honey/10 overflow-hidden">
         <Image
-          src={puppy.image || 'https://puppy.instabizweb.com/media/gone-ace.jpg'}
+          src={puppy.image || '/images/gone-home/gone-ace.jpg'}
           alt={`${puppy.name} (${puppy.breed})`}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"

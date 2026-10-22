@@ -53,7 +53,7 @@ export function CurtainIntro() {
         <div className="w-24 h-24 mb-4 rounded-full bg-honey-deep/40 border-2 border-cocoa flex items-center justify-center text-5xl shadow-md animate-bounce">
           🐶
         </div>
-        <h1 className="font-plush font-extrabold text-3xl sm:text-4xl text-cocoa tracking-tight mb-2">
+        <h1 className="font-plush font-extrabold text-3xl sm:text-4xl text-cocoa tracking-normal mb-2">
           TeddyPups U.A.E.
         </h1>
         <p className="font-scrawl text-xl sm:text-2xl text-toffee font-bold">

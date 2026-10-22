@@ -26,7 +26,7 @@ export default function ContactPage() {
                 we&apos;d love to meet you
               </span>
             </div>
-            <h1 className="font-plush font-extrabold text-4xl sm:text-6xl text-cocoa tracking-tight leading-tight">
+            <h1 className="font-plush font-extrabold text-4xl sm:text-6xl text-cocoa tracking-normal leading-tight">
               Visit &amp; Contact
             </h1>
             <p className="mt-3 text-cocoa/80 text-base sm:text-lg leading-relaxed">

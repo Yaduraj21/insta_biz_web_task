@@ -6,10 +6,13 @@ import { Footer } from '@/components/layout/Footer';
 import { AnnouncementStrip, CurtainIntro } from '@/components/layout/AnnouncementStrip';
 import { FloatingWhatsApp } from '@/components/layout/FloatingWhatsApp';
 import { MobileBottomBar } from '@/components/layout/MobileBottomBar';
+import { PawCursor } from '@/components/ui/PawCursor';
 
 const fraunces = Fraunces({
   variable: '--font-fraunces',
   subsets: ['latin'],
+  style: ['normal', 'italic'],
+  axes: ['opsz'],
   display: 'swap',
 });
 
@@ -90,6 +93,14 @@ export default function RootLayout({
       lang="en"
       className={`${fraunces.variable} ${figtree.variable} ${shantell.variable} scroll-smooth`}
     >
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Shantell+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        />
+      </head>
       <body className="min-h-screen flex flex-col bg-milk text-cocoa antialiased selection:bg-honey selection:text-cocoa">
         {/* Skip to Content for Accessibility */}
         <a
@@ -102,8 +113,11 @@ export default function RootLayout({
         {/* Intro Curtain */}
         <CurtainIntro />
 
+        {/* Custom Interactive Paw Cursor Trail */}
+        <PawCursor />
+
         {/* Sticky Header with Announcement */}
-        <div className="fixed top-0 inset-x-0 z-40">
+        <div className="fixed top-0 inset-x-0 z-40 bg-milk/95 shadow-xs">
           <AnnouncementStrip />
           <Header />
         </div>

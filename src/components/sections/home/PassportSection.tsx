@@ -35,7 +35,7 @@ export function PassportSection() {
               uncompromising standards
             </span>
           </div>
-          <h2 className="font-plush font-extrabold text-3xl sm:text-5xl text-honey tracking-tight">
+          <h2 className="font-plush font-extrabold text-3xl sm:text-5xl text-honey tracking-normal">
             The TeddyPups Passport Promise
           </h2>
           <p className="mt-3 text-milk/80 text-sm sm:text-base">

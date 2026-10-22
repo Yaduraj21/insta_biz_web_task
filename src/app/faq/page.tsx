@@ -44,7 +44,7 @@ export default function FAQPage() {
                 notes from our board
               </span>
             </div>
-            <h1 className="font-plush font-extrabold text-4xl sm:text-6xl text-cocoa tracking-tight leading-tight">
+            <h1 className="font-plush font-extrabold text-4xl sm:text-6xl text-cocoa tracking-normal leading-tight">
               Frequently Asked Questions
             </h1>
             <p className="mt-3 text-cocoa/80 text-base sm:text-lg leading-relaxed">

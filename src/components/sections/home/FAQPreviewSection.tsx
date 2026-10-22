@@ -18,10 +18,10 @@ export function FAQPreviewSection() {
               clarity &amp; care
             </span>
           </div>
-          <h2 className="font-plush font-extrabold text-3xl sm:text-5xl text-cocoa tracking-tight">
+          <h2 className="font-plush font-extrabold text-3xl sm:text-5xl text-cocoa tracking-normal">
             Frequently Asked Questions
           </h2>
-          <p className="mt-3 text-cocoa/75 text-sm sm:text-base">
+          <p className="mt-3 text-cocoa/75 text-sm sm:text-base font-medium">
             Everything you need to know about puppy health, vaccinations, showroom visits, and flight delivery.
           </p>
         </div>

@@ -38,7 +38,7 @@ export function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 ${
+        className={`relative w-full transition-all duration-300 ${
           isScrolled
             ? 'bg-milk/95 backdrop-blur-md shadow-sm'
             : 'bg-milk'
@@ -55,7 +55,7 @@ export function Header() {
               🐶
             </div>
             <div className="flex flex-col">
-              <span className="font-plush font-extrabold text-xl sm:text-2xl text-cocoa tracking-tight leading-none">
+              <span className="font-plush font-extrabold text-xl sm:text-2xl text-cocoa tracking-normal leading-none">
                 TeddyPups
               </span>
               <span className="font-scrawl text-xs text-toffee font-semibold leading-tight">

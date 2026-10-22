@@ -20,7 +20,7 @@ export function FinalCTASection() {
             </span>
           </div>
 
-          <h2 className="font-plush font-extrabold text-3xl sm:text-5xl text-cocoa tracking-tight leading-tight max-w-2xl mx-auto">
+          <h2 className="font-plush font-extrabold text-3xl sm:text-5xl text-cocoa leading-tight tracking-normal max-w-2xl mx-auto">
             Ready to Fall in Love? Visit Our Downtown Dubai Showroom.
           </h2>
 

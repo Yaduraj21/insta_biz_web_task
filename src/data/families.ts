@@ -3,7 +3,7 @@ import { FamilyPhoto } from '@/types';
 export const familyPhotos: FamilyPhoto[] = [
   {
     id: 'fam-1',
-    src: 'https://puppy.instabizweb.com/media/family-1.jpg',
+    src: '/images/families/fam-1.jpg',
     ownerName: 'Sarah & Tariq',
     puppyName: 'Milo',
     breed: 'Maltipoo',
@@ -13,7 +13,7 @@ export const familyPhotos: FamilyPhoto[] = [
   },
   {
     id: 'fam-2',
-    src: 'https://puppy.instabizweb.com/media/family-2.jpg',
+    src: '/images/families/fam-2.jpg',
     ownerName: 'Elena Rostova',
     puppyName: 'Coco',
     breed: 'Teacup Poodle',
@@ -23,7 +23,7 @@ export const familyPhotos: FamilyPhoto[] = [
   },
   {
     id: 'fam-3',
-    src: 'https://puppy.instabizweb.com/media/family-3.jpg',
+    src: '/images/families/fam-3.jpg',
     ownerName: 'The Al-Maktoum Family',
     puppyName: 'Teddy',
     breed: 'Pomeranian',
@@ -33,7 +33,7 @@ export const familyPhotos: FamilyPhoto[] = [
   },
   {
     id: 'fam-4',
-    src: 'https://puppy.instabizweb.com/media/family-4.jpg',
+    src: '/images/families/fam-4.jpg',
     ownerName: 'Chloe & Marc',
     puppyName: 'Snowball',
     breed: 'Bichon Frise',
@@ -43,7 +43,7 @@ export const familyPhotos: FamilyPhoto[] = [
   },
   {
     id: 'fam-5',
-    src: 'https://puppy.instabizweb.com/media/family-5.jpg',
+    src: '/images/families/fam-5.jpg',
     ownerName: 'Fatima & Hamad',
     puppyName: 'Mochi',
     breed: 'Korean Teacup Poodle',
@@ -53,7 +53,7 @@ export const familyPhotos: FamilyPhoto[] = [
   },
   {
     id: 'fam-6',
-    src: 'https://puppy.instabizweb.com/media/family-6.jpg',
+    src: '/images/families/fam-6.jpg',
     ownerName: 'Jessica & David',
     puppyName: 'Daisy',
     breed: 'Maltipoo',
@@ -63,7 +63,7 @@ export const familyPhotos: FamilyPhoto[] = [
   },
   {
     id: 'fam-7',
-    src: 'https://puppy.instabizweb.com/media/family-7.jpg',
+    src: '/images/families/fam-7.jpg',
     ownerName: 'Nour & Kareem',
     puppyName: 'Leo',
     breed: 'Toy Poodle',
@@ -73,7 +73,7 @@ export const familyPhotos: FamilyPhoto[] = [
   },
   {
     id: 'fam-8',
-    src: 'https://puppy.instabizweb.com/media/family-8.jpg',
+    src: '/images/families/fam-8.jpg',
     ownerName: 'Sophie Van Der Berg',
     puppyName: 'Bella',
     breed: 'Maltese',

@@ -12,7 +12,7 @@ interface PuppyCardProps {
 
 export function PuppyCard({ puppy, priority = false }: PuppyCardProps) {
   const isAvailable = puppy.status === 'available';
-  const displayImage = puppy.images[0] || 'https://puppy.instabizweb.com/media/maltipoo-1.jpg';
+  const displayImage = puppy.images[0] || '/images/puppies/max-1.jpg';
 
   return (
     <article className="group bg-white rounded-3xl border-2 border-cocoa/15 hover:border-cocoa/40 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden relative">
@@ -73,7 +73,7 @@ export function PuppyCard({ puppy, priority = false }: PuppyCardProps) {
         <div>
           <div className="flex items-baseline justify-between gap-2">
             <Link href={`/puppies/${puppy.slug}`}>
-              <h3 className="font-plush font-extrabold text-2xl text-cocoa hover:text-toffee transition-colors">
+              <h3 className="font-plush font-extrabold text-2xl text-cocoa hover:text-toffee transition-colors tracking-normal">
                 {puppy.name}
               </h3>
             </Link>
